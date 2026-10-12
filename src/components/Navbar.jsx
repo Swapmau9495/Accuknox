@@ -28,12 +28,29 @@ export const Navbar = () => {
 
   return (
     <header className="top-navbar">
-      <div className="navbar-left">
-        <nav aria-label="Breadcrumb" className="breadcrumb-nav">
-          <span className="breadcrumb-item breadcrumb-inactive">Home</span>
-          <span className="breadcrumb-separator">&gt;</span>
-          <span className="breadcrumb-item breadcrumb-active">Dashboard V2</span>
-        </nav>
+      <div className="navbar-top-row">
+        <div className="navbar-left">
+          <nav aria-label="Breadcrumb" className="breadcrumb-nav">
+            <span className="breadcrumb-item breadcrumb-inactive">Home</span>
+            <span className="breadcrumb-separator">&gt;</span>
+            <span className="breadcrumb-item breadcrumb-active">Dashboard V2</span>
+          </nav>
+        </div>
+
+        <div className="navbar-right">
+          <button type="button" className="nav-icon-btn" title="Notifications" aria-label="Notifications">
+            <Bell size={18} />
+            <span className="notification-dot" />
+          </button>
+
+          <div className="user-profile-menu">
+            <div className="user-avatar-circle">
+              <User size={16} />
+            </div>
+            <span className="user-name">Security Admin</span>
+            <ChevronDown size={14} className="user-dropdown-icon" />
+          </div>
+        </div>
       </div>
 
       <div className="navbar-center">
@@ -62,21 +79,6 @@ export const Navbar = () => {
               {matchCount} {matchCount === 1 ? 'match' : 'matches'}
             </span>
           )}
-        </div>
-      </div>
-
-      <div className="navbar-right">
-        <button type="button" className="nav-icon-btn" title="Notifications" aria-label="Notifications">
-          <Bell size={18} />
-          <span className="notification-dot" />
-        </button>
-
-        <div className="user-profile-menu">
-          <div className="user-avatar-circle">
-            <User size={16} />
-          </div>
-          <span className="user-name">Security Admin</span>
-          <ChevronDown size={14} className="user-dropdown-icon" />
         </div>
       </div>
     </header>

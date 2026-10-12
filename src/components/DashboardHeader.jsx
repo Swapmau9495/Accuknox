@@ -42,76 +42,78 @@ export const DashboardHeader = ({ onOpenAddDrawer }) => {
           <Plus size={16} />
         </button>
 
-        {/* Refresh Button */}
-        <button
-          type="button"
-          className={`btn-header-icon ${isRefreshing ? 'spin-anim' : ''}`}
-          onClick={handleRefresh}
-          title="Refresh dashboard"
-          aria-label="Refresh dashboard"
-        >
-          <RotateCw size={16} />
-        </button>
-
-        {/* More Options / Reset Menu */}
-        <div className="menu-dropdown-wrapper">
+        <div className="header-actions-subrow">
+          {/* Refresh Button */}
           <button
             type="button"
-            className="btn-header-icon"
-            onClick={() => setShowMenuDropdown(!showMenuDropdown)}
-            title="More actions"
-            aria-label="More actions"
+            className={`btn-header-icon ${isRefreshing ? 'spin-anim' : ''}`}
+            onClick={handleRefresh}
+            title="Refresh dashboard"
+            aria-label="Refresh dashboard"
           >
-            <MoreVertical size={16} />
+            <RotateCw size={16} />
           </button>
 
-          {showMenuDropdown && (
-            <div className="header-dropdown-menu">
-              <button
-                type="button"
-                className="dropdown-menu-item"
-                onClick={() => {
-                  setShowMenuDropdown(false);
-                  handleReset();
-                }}
-              >
-                <RotateCcw size={14} />
-                <span>Reset to Default Data</span>
-              </button>
-            </div>
-          )}
-        </div>
+          {/* More Options / Reset Menu */}
+          <div className="menu-dropdown-wrapper">
+            <button
+              type="button"
+              className="btn-header-icon"
+              onClick={() => setShowMenuDropdown(!showMenuDropdown)}
+              title="More actions"
+              aria-label="More actions"
+            >
+              <MoreVertical size={16} />
+            </button>
 
-        {/* Time Selector Dropdown Button */}
-        <div className="time-select-wrapper">
-          <button
-            type="button"
-            className="btn-time-select"
-            onClick={() => setShowTimeDropdown(!showTimeDropdown)}
-            aria-expanded={showTimeDropdown}
-          >
-            <Clock size={16} className="time-select-icon" />
-            <span className="time-select-label">{timeRange}</span>
-            <ChevronDown size={14} className="time-select-chevron" />
-          </button>
-
-          {showTimeDropdown && (
-            <div className="time-dropdown-menu">
-              {timeOptions.map((opt) => (
+            {showMenuDropdown && (
+              <div className="header-dropdown-menu">
                 <button
-                  key={opt}
                   type="button"
-                  className={`time-option-item ${timeRange === opt ? 'selected' : ''}`}
+                  className="dropdown-menu-item"
                   onClick={() => {
-                    setTimeRange(opt);
-                    setShowTimeDropdown(false);
+                    setShowMenuDropdown(false);
+                    handleReset();
                   }}
                 >
-                  {opt}
+                  <RotateCcw size={14} />
+                  <span>Reset to Default Data</span>
                 </button>
-              ))}
-            </div>
-          )}
+              </div>
+            )}
+          </div>
+
+          {/* Time Selector Dropdown Button */}
+          <div className="time-select-wrapper">
+            <button
+              type="button"
+              className="btn-time-select"
+              onClick={() => setShowTimeDropdown(!showTimeDropdown)}
+              aria-expanded={showTimeDropdown}
+            >
+              <Clock size={16} className="time-select-icon" />
+              <span className="time-select-label">{timeRange}</span>
+              <ChevronDown size={14} className="time-select-chevron" />
+            </button>
+
+            {showTimeDropdown && (
+              <div className="time-dropdown-menu">
+                {timeOptions.map((opt) => (
+                  <button
+                    key={opt}
+                    type="button"
+                    className={`time-option-item ${timeRange === opt ? 'selected' : ''}`}
+                    onClick={() => {
+                      setTimeRange(opt);
+                      setShowTimeDropdown(false);
+                    }}
+                  >
+                    {opt}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

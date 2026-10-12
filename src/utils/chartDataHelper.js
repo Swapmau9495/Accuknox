@@ -24,6 +24,20 @@ export const STACKED_COLORS = [
 ];
 
 /**
+ * Strips any trailing numeric count like "(28)" or ": 28" from a label string.
+ * e.g. "Approved (28)" -> "Approved"
+ *      "Failed (1689)" -> "Failed"
+ *      "Connected: 2"  -> "Connected"
+ */
+export function getCleanLabel(label) {
+  if (!label || typeof label !== 'string') return '';
+  return label
+    .replace(/\s*\(\s*\d[\d,]*\s*\)\s*$/, '')
+    .replace(/:\s*\d[\d,]*\s*$/, '')
+    .trim();
+}
+
+/**
  * Extracts label: number pairs from text (e.g. "Connected: 2, Disconnected: 3" or "Active - 10, inactive 5")
  */
 export function extractPairsFromText(text) {
