@@ -1,0 +1,117 @@
+{
+  "categories": [
+    {
+      "id": "cspm",
+      "name": "CSPM Executive Dashboard",
+      "shortName": "CSPM",
+      "widgets": [
+        {
+          "id": "cloud_accounts",
+          "name": "Cloud Accounts",
+          "text": "Connected: 2, Not Connected: 2",
+          "type": "donut",
+          "visible": true,
+          "data": {
+            "total": 2,
+            "centerLabel": "Total",
+            "segments": [
+              { "label": "Connected (2)", "value": 2, "color": "#3b82f6" },
+              { "label": "Not Connected (2)", "value": 2, "color": "#bfdbfe" }
+            ]
+          }
+        },
+        {
+          "id": "cloud_risk",
+          "name": "Cloud Account Risk Assessment",
+          "text": "Failed: 1689, Warning: 681, Not available: 36, Passed: 7253",
+          "type": "donut",
+          "visible": true,
+          "data": {
+            "total": 9659,
+            "centerLabel": "Total",
+            "segments": [
+              { "label": "Failed (1689)", "value": 1689, "color": "#b91c1c" },
+              { "label": "Warning (681)", "value": 681, "color": "#eab308" },
+              { "label": "Not available (36)", "value": 36, "color": "#cbd5e1" },
+              { "label": "Passed (7253)", "value": 7253, "color": "#16a34a" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "cwpp",
+      "name": "CWPP Dashboard:",
+      "shortName": "CWPP",
+      "widgets": [
+        {
+          "id": "namespace_alerts",
+          "name": "Top 5 Namespace Specific Alerts",
+          "text": "No graph data available for namespace alerts",
+          "type": "empty_chart",
+          "visible": true,
+          "data": {
+            "message": "No Graph data available!"
+          }
+        },
+        {
+          "id": "workload_alerts",
+          "name": "Workload Alerts",
+          "text": "No graph data available for workload alerts",
+          "type": "empty_chart",
+          "visible": true,
+          "data": {
+            "message": "No Graph data available!"
+          }
+        }
+      ]
+    },
+    {
+      "id": "registry_scan",
+      "name": "Registry Scan",
+      "shortName": "Image",
+      "widgets": [
+        {
+          "id": "image_risk",
+          "name": "Image Risk Assessment",
+          "text": "1470 Total Vulnerabilities: Critical (9), High (150)",
+          "type": "stacked_bar",
+          "visible": true,
+          "data": {
+            "totalMetric": "1470",
+            "totalLabel": "Total Vulnerabilities",
+            "segments": [
+              { "label": "Critical (9)", "value": 9, "color": "#b91c1c" },
+              { "label": "High (150)", "value": 150, "color": "#ea580c" },
+              { "label": "Medium (420)", "value": 420, "color": "#eab308" },
+              { "label": "Low (891)", "value": 891, "color": "#94a3b8" }
+            ]
+          }
+        },
+        {
+          "id": "image_security",
+          "name": "Image Security Issues",
+          "text": "2 Total Images: Critical (2), High (2)",
+          "type": "stacked_bar",
+          "visible": true,
+          "data": {
+            "totalMetric": "2",
+            "totalLabel": "Total Images",
+            "segments": [
+              { "label": "Critical (2)", "value": 2, "color": "#b91c1c" },
+              { "label": "High (2)", "value": 2, "color": "#ea580c" },
+              { "label": "Warning (1)", "value": 1, "color": "#eab308" },
+              { "label": "Passed (4)", "value": 4, "color": "#94a3b8" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ticket",
+      "name": "Ticket Dashboard",
+      "shortName": "Ticket",
+      "widgets": []
+    }
+  ]
+}
